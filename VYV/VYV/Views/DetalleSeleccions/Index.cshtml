@@ -1,0 +1,63 @@
+﻿@model IEnumerable<VYV.DetalleSeleccion>
+
+@{
+    ViewBag.Title = "Index";
+}
+
+<h2>Index</h2>
+
+<p>
+    @Html.ActionLink("Create New", "Create")
+</p>
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.Asignatura.Descripcion)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Estudiante.Cedula)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Grupo.Ubicacion)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Profesor.Cedula)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Fecha)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Estatus)
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.Asignatura.Descripcion)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Estudiante.Cedula)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Grupo.Ubicacion)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Profesor.Cedula)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Fecha)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Estatus)
+        </td>
+        <td>
+            @Html.ActionLink("Edit", "Edit", new { id=item.CodDetalle }) |
+            @Html.ActionLink("Details", "Details", new { id=item.CodDetalle }) |
+            @Html.ActionLink("Delete", "Delete", new { id=item.CodDetalle })
+        </td>
+    </tr>
+}
+
+</table>

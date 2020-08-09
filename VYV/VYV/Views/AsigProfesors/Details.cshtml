@@ -1,0 +1,42 @@
+﻿@model VYV.AsigProfesor
+
+@{
+    ViewBag.Title = "Details";
+}
+
+<h2>Details</h2>
+
+<div>
+    <h4>AsigProfesor</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.Asignatura.Descripcion)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Asignatura.Descripcion)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Profesor.Cedula)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Profesor.Cedula)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Fecha)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Fecha)
+        </dd>
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { id = Model.CodAsigProf }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>
